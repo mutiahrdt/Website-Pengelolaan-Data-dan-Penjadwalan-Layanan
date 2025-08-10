@@ -1,0 +1,17 @@
+runtime: custom
+env: flex
+
+network:
+  forwarded_ports:
+    - 8080
+
+env_variables:
+  DB_HOST: ${DB_HOST}
+  DB_USER: ${DB_USER}
+  DB_PASSWORD: ${DB_PASSWORD}
+  
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 3
+  target_cpu_utilization: 0.65
+
